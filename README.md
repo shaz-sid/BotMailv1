@@ -1,2 +1,19 @@
-# BotMailv1
-BotMail: A Lightweight Email Auto-Responder &amp; Filter Bot which Runs Directly in the Terminal
+# BotMail: Email Auto-Responder & Filter Bot
+
+## Features
+- Reads unread emails using IMAP
+- Classifies emails into College / Work / Spam
+- Moves emails into folders
+- Sends automatic replies
+- 100% open-source
+- No Google Cloud, no paid APIs
+
+## Requirements
+- Python 3.9+
+- Email account with IMAP & SMTP
+- App password (recommended)
+
+## Run
+python main.py
+
+made with <3
