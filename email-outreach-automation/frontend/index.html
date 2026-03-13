@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Email Outreach Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">📧 Outreach</div>
+    <nav>
+      <a href="#" class="nav-link active" data-section="contacts">👥 Contacts</a>
+      <a href="#" class="nav-link" data-section="campaigns">📣 Campaigns</a>
+      <a href="#" class="nav-link" data-section="preview">👁 Preview</a>
+      <a href="#" class="nav-link" data-section="analytics">📊 Analytics</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOAST -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- SECTION: CONTACTS -->
+    <section id="section-contacts" class="page active">
+      <h1 class="page-title">Contacts</h1>
+
+      <div class="card">
+        <h2>Upload CSV</h2>
+        <div class="upload-area" id="uploadArea">
+          <span>📁 Drag & drop or click to select a CSV file</span>
+          <input type="file" id="csvFile" accept=".csv" />
+        </div>
+        <button id="btnUpload" class="btn btn-primary">Upload Contacts</button>
+        <div id="uploadResult" class="result-box hidden"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>All Contacts</h2>
+          <button id="btnLoadContacts" class="btn btn-secondary">🔄 Refresh</button>
+        </div>
+        <div id="contactsLoading" class="loading hidden">Loading…</div>
+        <div class="table-wrapper">
+          <table id="contactsTable">
+            <thead>
+              <tr>
+                <th>ID</th><th>Name</th><th>Email</th><th>Company</th>
+              </tr>
+            </thead>
+            <tbody id="contactsTbody">
+              <tr><td colspan="4" class="empty-state">No contacts loaded yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CAMPAIGNS -->
+    <section id="section-campaigns" class="page hidden">
+      <h1 class="page-title">Campaigns</h1>
+
+      <div class="card">
+        <h2>Create Campaign</h2>
+        <div class="form-group">
+          <label for="campaignName">Campaign Name</label>
+          <input id="campaignName" type="text" placeholder="e.g. Q2 Outreach" />
+        </div>
+        <div class="form-group">
+          <label for="campaignDescription">Description</label>
+          <textarea id="campaignDescription" rows="3" placeholder="Describe the campaign goal…"></textarea>
+        </div>
+        <button id="btnCreateCampaign" class="btn btn-primary">➕ Create Campaign</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>All Campaigns</h2>
+          <button id="btnLoadCampaigns" class="btn btn-secondary">🔄 Refresh</button>
+        </div>
+        <div id="campaignsLoading" class="loading hidden">Loading…</div>
+        <div class="table-wrapper">
+          <table id="campaignTable">
+            <thead>
+              <tr>
+                <th>ID</th><th>Name</th><th>Status</th><th>Sent</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="campaignTbody">
+              <tr><td colspan="5" class="empty-state">No campaigns yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PREVIEW -->
+    <section id="section-preview" class="page hidden">
+      <h1 class="page-title">Email Preview</h1>
+      <div class="card">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="previewCampaignId">Campaign ID</label>
+            <input id="previewCampaignId" type="number" placeholder="e.g. 1" />
+          </div>
+          <div class="form-group">
+            <label for="previewContactId">Contact ID</label>
+            <input id="previewContactId" type="number" placeholder="e.g. 5" />
+          </div>
+        </div>
+        <button id="btnPreview" class="btn btn-primary">👁 Preview Email</button>
+        <div id="previewResult" class="email-preview hidden"></div>
+      </div>
+    </section>
+
+    <!-- SECTION: ANALYTICS -->
+    <section id="section-analytics" class="page hidden">
+      <h1 class="page-title">Campaign Analytics</h1>
+      <div class="card">
+        <div class="form-group">
+          <label for="statsCampaignId">Campaign ID</label>
+          <input id="statsCampaignId" type="number" placeholder="e.g. 1" />
+        </div>
+        <button id="btnLoadStats" class="btn btn-primary">📊 Load Stats</button>
+        <div id="statsResult" class="hidden">
+          <div class="stats-grid" id="statsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environments
+venv/
+.env/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Redis
+dump.rdb
+
+# VSCode
+.vscode/
+
+# Celery results
+celerybeat-schedule
+
+# Environment files
+.env
+
+# Node (if ever added)
+node_modules/
