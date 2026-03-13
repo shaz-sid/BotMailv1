@@ -32,70 +32,71 @@ This project demonstrates a *production-style backend architecture* with FastAPI
     - Automatic retries for failures
     
   ### Campaign Analytics
-  Track:
-    - Emails sent
-    - Failures
-    - Open rate
-    - Reply rate
-    - Click rate
+    Track:
+      - Emails sent
+      - Failures
+      - Open rate
+      - Reply rate
+      - Click rate
   
   ### Simple Dashboard
   Frontend built with:
-    - HTML
-    - CSS
-    - Vanilla JavaScript
+      - HTML
+      - CSS
+      - Vanilla JavaScript
 
 
 
 # System Architecture
 
-  Frontend (HTML + JS)
-  ↓
-  FastAPI REST API
-  ↓
-  Services Layer
-  ↓
-  PostgreSQL / SQLite
-  ↓
-  Celery Workers
-  ↓
-  Redis Queue
-  ↓
-  Resend Email API
+    Frontend (HTML + JS)
+    ↓
+    FastAPI REST API
+    ↓
+    Services Layer
+    ↓
+    PostgreSQL / SQLite
+    ↓
+    Celery Workers
+    ↓
+    Redis Queue
+    ↓
+    Resend Email API
 
   AI Email Generation:
-  Gemini API
-  ↓
-  Personalized Email Content
+  
+      Gemini API
+      ↓
+      Personalized Email Content
 
 # Project Structure
 
-  BotMail (email-outreach-automation)
-  backend/app
-  │
-  ├── routes
-  │ ├── analytics.py
-  │ ├── campaigns.py
-  │ ├── contacts.py
-  │ └── email.py
-  │
-  ├── services
-  │ ├── campaign_service.py
-  │ ├── csv_service.py
-  │ ├── email_service.py
-  │ └── gemini_service.py
-  │
-  ├── workers
-  │ └── celery_worker.py
-  │
-  ├── config.py
-  ├── database.py
-  ├── models.py
-  ├── main.py
-  │
-  frontend
-  ├── index.html
-  ├── style.css
-  └── app.js
+    BotMail (email-outreach-automation)
+    backend/app
+    │
+    ├── routes
+    │ ├── analytics.py
+    │ ├── campaigns.py
+    │ ├── contacts.py
+    │ └── email.py
+    │
+    ├── services
+    │ ├── campaign_service.py
+    │ ├── csv_service.py
+    │ ├── email_service.py
+    │ └── gemini_service.py
+    │
+    ├── workers
+    │ └── celery_worker.py
+    │
+    ├── config.py
+    ├── database.py
+    ├── models.py
+    ├── main.py
+    │
+    frontend
+    ├── index.html
+    ├── style.css
+    └── app.js
 
 made with <3
